@@ -1,31 +1,17 @@
-ALGORITHM SimpleCheck
+ALGORITHM algorithm_name
 VAR
-    c : CHAR
-    len : INTEGER := 0
-    words : INTEGER := 1
-    vowels : INTEGER := 0
-
+  let compteurLongueur = 0;
+let compteurMots = 1;
+let compteurVoyelles = 0;
+const voyelles = "aeiouyAEIOUY";  
 BEGIN
-    Read(c)
-
-    WHILE (c <> '.') DO
-        len := len + 1
-
-        IF (c = ' ') THEN
-            words := words + 1
-        END_IF
-
-        IF (c='a' OR c='e' OR c='i' OR c='o' OR c='u') THEN
-            vowels := vowels + 1
-        END_IF
-
-        Read(c)
-    END_WHILE
-
-    // Count the final period '.'
-    len := len + 1
-
-    Write(len)
-    Write(words)
-    Write(vowels)
+    for (let i = 0; i < phrase.length; i++) {
+  const caractere = phrase[i];
+  if (caractere === ".") break;
+  compteurLongueur++;
+  if (caractere === " ") compteurMots++;
+  if (voyelles.includes(caractere)) compteurVoyelles++;
+}
 END
+
+
